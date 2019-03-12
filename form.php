@@ -11,7 +11,18 @@
 <body>
     <?php
     if (isset($_POST['submit'])) {
+        $ok = true;
+        if (!isset($_POST['name']) || $_POST['name'] === '') {
+            $ok = false;
+        }
+        if (!isset($_POST['password']) || $_POST['password'] === '') {
+            $ok = false;
+        }
+        if (!isset($_POST['comments']) || $_POST['comments'] === '') {
+            $ok = false;
+        }
 
+        if($ok) {
         printf( 'Username: %s
         <br>Password: %s
         <br>Gender: %s
@@ -27,6 +38,7 @@
             htmlspecialchars($_POST['comments']), 
             htmlspecialchars($_POST['tc']));
         }
+    }
     ?>
     <form method="post" action="">
     Username: <input type="text" name="name"><br>
