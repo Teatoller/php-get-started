@@ -16,16 +16,16 @@
         <br>Password: %s
         <br>Gender: %s
         <br>Color: %s
-        <br>Language(s): %s,
+        <br>Language(s): %s
         <br>Comments: %s
         <br>T&amp;C: %s', 
-            $_POST['name'],
-            $_POST['Password'],  
-            $_POST['gender'], 
-            $_POST['color'], 
-            implode(' ', $_POST['languages']), 
-            $_POST['comments'], 
-            $_POST['tc']);
+            htmlspecialchars($_POST['name']),
+            htmlspecialchars($_POST['Password']),  
+            htmlspecialchars($_POST['gender']), 
+            htmlspecialchars($_POST['color']), 
+            htmlspecialchars(implode(' ', $_POST['languages'])), 
+            htmlspecialchars($_POST['comments']), 
+            htmlspecialchars($_POST['tc']));
         }
     ?>
     <form method="post" action="">
