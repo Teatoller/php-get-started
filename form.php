@@ -21,6 +21,19 @@
         if (!isset($_POST['comments']) || $_POST['comments'] === '') {
             $ok = false;
         }
+        if (!isset($_POST['gender']) || $_POST['gender'] === '') {
+            $ok = false;
+        }
+        if (!isset($_POST['tc']) || $_POST['tc'] === '') {
+            $ok = false;
+        }
+        if (!isset($_POST['color']) || $_POST['color'] === '') {
+            $ok = false;
+        }
+        if (!isset($_POST['languages']) || !is_array($_POST['languages']) 
+        || count($_POST['languages']) === 0) {
+            $ok = false;
+        }
 
         if($ok) {
         printf( 'Username: %s
@@ -47,6 +60,7 @@
             <input type="radio" name="gender" value="m">male<br>
     Favorite color:
     <select name="color">
+    <option value="">Please select</option>
     <option value="#foo">red</option>
     <option value="#ofo">green</option>
     <option value="#oof">blue</option>
