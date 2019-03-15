@@ -30,18 +30,45 @@
             $color = $_POST['color'];
         }
 
-        if($ok) {
+        if ($ok) {
             // database code
-            $db = mysqli_connect('localhost', 'root', '', 'php');
+            $db = mysqli_connect(
+                'localhost',
+                'root',
+                'root',
+                'php'
+            );
             $sql = sprintf("INSERT INTO users (name, gender, color) VALUES (
                 '%s', '%s', '%s'
-            )", mysqli_real_escape_string($db, 'name'),
-                mysqli_real_escape_string($db, 'gender'),
-                mysqli_real_escape_string($db, 'color'));
+            )", mysqli_real_escape_string($db, $name),
+                mysqli_real_escape_string($db, $gender),
+                mysqli_real_escape_string($db, $color));
             mysqli_query($db, $sql);
             mysqli_close($db);
             echo '<p>User added.</p>';
         }
+
+        // if ($ok) {
+        //     $servername = "localhost";
+        //     $username = "root";
+        //     $password = "root";
+
+        //     try {
+        //         $conn = new PDO("mysql:host=$servername;dbname=php", $username, $password);
+                
+        //         // set the PDO error mode to exception
+        //         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //         echo "Connected successfully";
+        //         $sql = sprintf("INSERT INTO users (name, gender, color) VALUES (
+        //             '%s', '%s', '%s'
+        //             )", mysqli_real_escape_string($db, $name),
+        //                 mysqli_real_escape_string($db, $gender),
+        //                 mysqli_real_escape_string($db, $color));
+        //                 mysqli_query($db, $sql);
+        //     } catch (PDOException $e) {
+        //         echo "Connection failed: " . $e->getMessage();
+        //     }
+        // }
     }
     ?>
     <form method="post" action="">
