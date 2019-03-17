@@ -65,6 +65,7 @@
         //                 mysqli_real_escape_string($db, $gender),
         //                 mysqli_real_escape_string($db, $color));
         //                 mysqli_query($db, $sql);
+        //         $conn->exec($sql);
         //     } catch (PDOException $e) {
         //         echo "Connection failed: " . $e->getMessage();
         //     }
