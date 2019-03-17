@@ -1,5 +1,12 @@
+<?php
 
-<!DOCTYPE html>
+if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
+    $id = $_GET['id'];
+} else {
+    header('Location: select.php');
+}
+
+?><!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
