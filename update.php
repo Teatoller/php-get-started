@@ -42,7 +42,7 @@ if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
             $db = mysqli_connect('localhost', 'root', 'root', 'php');
             $sql = sprintf(
                 "UPDATE users SET name='%s', gender='%s', color='%s' 
-            WHERE id='%s",
+            WHERE id='%s'",
                 mysqli_real_escape_string($db, $name),
                 mysqli_real_escape_string($db, $gender),
                 mysqli_real_escape_string($db, $color),
