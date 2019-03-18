@@ -39,16 +39,19 @@
         }
 
         if ($ok) {
+            $hash = password_hash($password, PASSWORD_DEFAULT);
             // database code
+            
             $db = mysqli_connect(
                 'localhost',
                 'root',
                 'root',
                 'php'
             );
-            $sql = sprintf("INSERT INTO users (name, gender, color) VALUES (
-                '%s', '%s', '%s'
+            $sql = sprintf("INSERT INTO users (name, password, gender, color) VALUES (
+                '%s', '%s', '%s', '%s'
             )", mysqli_real_escape_string($db, $name),
+                mysqli_real_escape_string($db, $hash),
                 mysqli_real_escape_string($db, $gender),
                 mysqli_real_escape_string($db, $color));
             mysqli_query($db, $sql);
@@ -84,7 +87,7 @@
     Username: <input type="text" name="name" value="<?php
         echo htmlspecialchars($name);
      ?>"><br>
-    Password: <input type="password" password="password"><br>
+    Password: <input type="password" name="password"><br>
     Gender:
         <input type="radio" name="gender" value="f"<?php
             if ($gender === 'f') {
