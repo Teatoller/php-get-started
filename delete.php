@@ -18,6 +18,8 @@ if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
 </head>
 <body>
     <?php
+        readfile('navigation.tmpl.html');
+
     $db = mysqli_connect('localhost', 'root', 'root', 'php');
     $sql = "DELETE FROM users WHERE id=$id";
     mysqli_query($db, $sql);

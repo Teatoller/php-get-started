@@ -9,6 +9,9 @@
     <script src="main.js"></script>
 </head>
 <body>
+    <?php
+        readfile('navigation.tmpl.html');
+    ?>
     <ul>
     <?php
     $db = mysqli_connect(

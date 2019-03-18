@@ -16,6 +16,7 @@ if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
 </head>
 <body>
     <?php
+        readfile('navigation.tmpl.html');
 
     $name = '';
     $gender = '';
