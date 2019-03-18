@@ -11,6 +11,7 @@
         readfile('navigation.tmpl.html');
 
     $name = '';
+    $password = '';
     $gender = '';
     $color = '';
 
@@ -20,6 +21,11 @@
             $ok = false;
         } else {
             $name = $_POST['name'];
+        }
+        if (!isset($_POST['password']) || $_POST['password'] === '') {
+            $ok = false;
+        } else {
+            $password = $_POST['password'];
         }
         if (!isset($_POST['gender']) || $_POST['gender'] === '') {
             $ok = false;
@@ -78,6 +84,7 @@
     Username: <input type="text" name="name" value="<?php
         echo htmlspecialchars($name);
      ?>"><br>
+    Password: <input type="password" password="password"><br>
     Gender:
         <input type="radio" name="gender" value="f"<?php
             if ($gender === 'f') {
