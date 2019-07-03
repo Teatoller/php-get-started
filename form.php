@@ -76,12 +76,17 @@
     }
     ?>
     <form method="post" action="">
+    <div class="form-user" >
     Username: <input type="text" name="name" value="<?php
         echo htmlspecialchars($name);
      ?>"><br>
+    </div>
+    <div class="user-password">
     Password: <input type="password" name="password" value="<?php
         echo htmlspecialchars($password);
      ?>"><br>
+    </div>
+    <div class="user-gender">
     Gender:
         <input type="radio" name="gender" value="f"<?php
             if ($gender === 'f') {
@@ -93,6 +98,8 @@
                 echo ' checked';
             }
             ?>>male<br>
+    </div>
+    <div class="fav-color">
     Favorite color:
     <select name="color">
     <option value="">Please select</option>
@@ -112,6 +119,8 @@
     }
      ?>>blue</option>
     </select><br>
+    </div>
+    <div class="lang-choice">
     Languages spoken:
     <select name="languages[]" multiple size="3">
     <option value="en"<?php
@@ -130,15 +139,24 @@
     }
      ?>>Italian</option>
     </select><br>
+    </div>
+    <div class="area-comment">
     Comments: <textarea name="comments"><?php
         echo htmlspecialchars($comments);
      ?></textarea><br>
-            <input type="checkbox" name="tc" value="ok" <?php
+            
+    </div>
+    <div class="legal-terms">
+    <input type="checkbox" name="tc" value="ok" <?php
             if ($tc === "ok") {
                 echo ' checked';
             }
-             ?>>I accept the T&C<br>
-            <input type="submit" name="submit" value="submit">
+             ?>>I accept the T&amp;C<br>
+            
+    </div>
+    <div>
+    <input type="submit" name="submit" value="submit">
+    </div>
     </form>
 </body>
 </html>

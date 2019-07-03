@@ -1,0 +1,32 @@
+body {
+    margin: 0.5em;
+    font-style: san-serif;
+}
+
+.form-user {
+    margin: 0.5em;
+}
+
+.user-password {
+    margin: 0.5em;
+}
+
+.user-gender {
+    margin: 0.5em;
+}
+
+.fav-color {
+    margin: 0.5em;
+}
+
+.lang-choice {
+    margin: 0.5em;
+}
+
+.area-comment{
+    margin: 0.5em;
+}
+
+.legal-terms {
+    margin: 0.5em;
+}
